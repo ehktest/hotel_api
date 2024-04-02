@@ -23,7 +23,8 @@ if (process.env.NODE_ENV !== "production") {
 /* ------------------------------------------------------------------ */
 
 // ? cors
-app.use(cors({ origin: "*", credentials: true }));
+// app.use(cors({ origin: "*", credentials: true })); // cookies deprecated because not having a frontend
+app.use(cors({ origin: "*" }));
 
 // * deactivate loggers for vercel deploy if activated:
 // ? nodejs local logger -> request logs handled via morgan
@@ -74,11 +75,11 @@ app.use("/uploads", express.static("./uploads"));
       // maxAge: 1000 * 60 * 60 * 24 * 3 // milliseconds // 3 days
       // Burasi global cookie ayarlaridir, maxAge burada tanimlanirsa session olarak calismaz ve degiskenlik gostermez. controller'larda ayri ayri yapmak daha fazla esneklik saglar.
       // httpOnly: a boolean indicating whether the cookie is only to be sent over HTTP(S), and not made available to client JavaScript (true by default).
-      httpOnly: true,
+      // httpOnly: true, // cookies deprecated because not having a frontend
       // secure: a boolean indicating whether the cookie is only to be sent over HTTPS (false by default for HTTP, true by default for HTTPS). If this is set to true and Node.js is not directly over a TLS connection, be sure to read how to setup Express behind proxies or the cookie may not ever set correctly.
-      secure: process.env.NODE_ENV === "production",
+      // secure: process.env.NODE_ENV === "production", // cookies deprecated because not having a frontend
       // sameSite: a boolean or string indicating whether the cookie is a "same site" cookie (false by default). This can be set to 'strict', 'lax', 'none', or true (which maps to 'strict').
-      sameSite: "none",
+      // sameSite: "none", // deprecated because not having a frontend
     })
   );
 
