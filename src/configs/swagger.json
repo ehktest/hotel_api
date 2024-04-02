@@ -13,12 +13,9 @@
       "name": "ISC"
     }
   },
-  "host": "127.0.0.1:8000",
+  "host": "https://hotel-api-ehkarabas.onrender.com/",
   "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "securityDefinitions": {
     "JWTAccess": {
       "type": "apiKey",
@@ -36,9 +33,7 @@
   "paths": {
     "/auth/login": {
       "post": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "summary": "Login <Permissions: Public>",
         "description": "Login with username and password",
         "parameters": [
@@ -90,9 +85,7 @@
     },
     "/auth/refresh_browsers": {
       "get": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "summary": "JWT: Refresh - Cookie <Permissions: Public>",
         "description": "Refresh access token via cookie.",
         "parameters": [
@@ -129,9 +122,7 @@
     },
     "/auth/refresh_others": {
       "get": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "summary": "JWT: Refresh - API <Permissions: Public>",
         "description": "Refresh access token via refresh token. You need to set your refresh token to X-Refresh-Token header and access token to Authorization header in <Bearer ...accessToken...> format to refresh your access token.",
         "parameters": [
@@ -168,9 +159,7 @@
     },
     "/auth/logout": {
       "get": {
-        "tags": [
-          "Authentication"
-        ],
+        "tags": ["Authentication"],
         "summary": "Logout <Permissions: Public>",
         "description": "Delete refresh token from cookie and blacklist tokens. You need to set your refresh token to X-Refresh-Token header and access token to Authorization header in <Bearer ...accessToken...> format to safely blacklist them.",
         "parameters": [
@@ -204,9 +193,7 @@
     },
     "/users/{userId}": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get Single User <Permissions: Admin|Own>",
         "description": "",
         "parameters": [
@@ -244,9 +231,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Update User <Permissions: Admin|Own>",
         "description": "",
         "parameters": [
@@ -314,9 +299,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Delete User <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -354,9 +337,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Update User <Permissions: Admin|Own>",
         "description": "",
         "parameters": [
@@ -426,9 +407,7 @@
     },
     "/users/": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "List Users <Permissions: Admin>",
         "description": "\r  You can send query with endpoint for filter[], search[], sort[], page and limit.\r  <ul> Examples:\r  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>\r  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>\r  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>\r  <li>URL/?<b>page=2&limit=1</b></li>\r  </ul>\r  ",
         "parameters": [
@@ -460,9 +439,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Create a new User <Permissions: Public>",
         "description": "",
         "parameters": [
@@ -526,9 +503,7 @@
     },
     "/rooms/{roomId}": {
       "get": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "summary": "Get Single Room <Permissions: Public>",
         "description": "",
         "parameters": [
@@ -566,9 +541,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "summary": "Update Room <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -611,9 +584,7 @@
                 },
                 "images": {
                   "type": "array",
-                  "example": [
-                    "uploads/default_hotel_room_pic.png"
-                  ],
+                  "example": ["uploads/default_hotel_room_pic.png"],
                   "items": {
                     "type": "string"
                   }
@@ -637,9 +608,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "summary": "Delete Room <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -677,9 +646,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "summary": "Update Room <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -722,9 +689,7 @@
                 },
                 "images": {
                   "type": "array",
-                  "example": [
-                    "uploads/default_hotel_room_pic.png"
-                  ],
+                  "example": ["uploads/default_hotel_room_pic.png"],
                   "items": {
                     "type": "string"
                   }
@@ -750,9 +715,7 @@
     },
     "/rooms/": {
       "get": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "summary": "List Rooms <Permissions: Public>",
         "description": "\r  You can send query with endpoint for filter[], search[], sort[], page and limit.\r  <ul> Examples:\r  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>\r  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>\r  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>\r  <li>URL/?<b>page=2&limit=1</b></li>\r  </ul>\r  ",
         "parameters": [
@@ -784,9 +747,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "summary": "Create a new Room <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -823,9 +784,7 @@
                 },
                 "images": {
                   "type": "array",
-                  "example": [
-                    "uploads/default_hotel_room_pic.png"
-                  ],
+                  "example": ["uploads/default_hotel_room_pic.png"],
                   "items": {
                     "type": "string"
                   }
@@ -851,9 +810,7 @@
     },
     "/reservations/{reservationId}": {
       "get": {
-        "tags": [
-          "Reservations"
-        ],
+        "tags": ["Reservations"],
         "summary": "Get Single Reservation <Permissions: Login>",
         "description": "",
         "parameters": [
@@ -891,9 +848,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Reservations"
-        ],
+        "tags": ["Reservations"],
         "summary": "Update Reservation <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -979,9 +934,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Reservations"
-        ],
+        "tags": ["Reservations"],
         "summary": "Delete Reservation <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -1019,9 +972,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "Reservations"
-        ],
+        "tags": ["Reservations"],
         "summary": "Update Reservation <Permissions: Admin>",
         "description": "",
         "parameters": [
@@ -1109,9 +1060,7 @@
     },
     "/reservations/": {
       "get": {
-        "tags": [
-          "Reservations"
-        ],
+        "tags": ["Reservations"],
         "summary": "List Reservations <Permissions: Login>",
         "description": "\r  You can send query with endpoint for filter[], search[], sort[], page and limit.\r  <ul> Examples:\r  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>\r  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>\r  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>\r  <li>URL/?<b>page=2&limit=1</b></li>\r  </ul>\r  ",
         "parameters": [
@@ -1143,9 +1092,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Reservations"
-        ],
+        "tags": ["Reservations"],
         "summary": "Create a new Reservation <Permissions: Login>",
         "description": "",
         "parameters": [
@@ -1336,10 +1283,7 @@
             },
             "required": {
               "type": "array",
-              "example": [
-                true,
-                "Email field is required"
-              ],
+              "example": [true, "Email field is required"],
               "items": {
                 "type": "string"
               }
@@ -1354,9 +1298,7 @@
             },
             "validate": {
               "type": "array",
-              "example": [
-                null
-              ],
+              "example": [null],
               "items": {
                 "type": "function"
               }
@@ -1466,18 +1408,14 @@
           "properties": {
             "type": {
               "type": "array",
-              "example": [
-                null
-              ],
+              "example": [null],
               "items": {
                 "type": "function"
               }
             },
             "default": {
               "type": "array",
-              "example": [
-                "/uploads/default_hotel_room_pic.png"
-              ],
+              "example": ["/uploads/default_hotel_room_pic.png"],
               "items": {
                 "type": "string"
               }
@@ -1492,11 +1430,7 @@
             },
             "enum": {
               "type": "array",
-              "example": [
-                "Single",
-                "Twin",
-                "King"
-              ],
+              "example": ["Single", "Twin", "King"],
               "items": {
                 "type": "string"
               }
