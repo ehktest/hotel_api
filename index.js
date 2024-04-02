@@ -24,7 +24,7 @@ if (process.env.NODE_ENV !== "production") {
 
 // ? cors
 // app.use(cors({ origin: "*", credentials: true })); // cookies deprecated because not having a frontend
-app.use(cors({ origin: "*" }));
+// app.use(cors({ origin: "*" }));
 
 // * deactivate loggers for vercel deploy if activated:
 // ? nodejs local logger -> request logs handled via morgan
