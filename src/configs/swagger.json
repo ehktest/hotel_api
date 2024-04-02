@@ -15,7 +15,7 @@
   },
   "host": "hotel-api-ehkarabas.onrender.com",
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": ["https"],
   "securityDefinitions": {
     "JWTAccess": {
       "type": "apiKey",
