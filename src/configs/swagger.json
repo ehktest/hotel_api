@@ -13,7 +13,7 @@
       "name": "ISC"
     }
   },
-  "host": "https://hotel-api-ehkarabas.onrender.com/",
+  "host": "hotel-api-ehkarabas.onrender.com",
   "basePath": "/",
   "schemes": ["http", "https"],
   "securityDefinitions": {
